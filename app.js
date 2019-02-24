@@ -3,5 +3,5 @@
 searchButton.addEventListener('click', searchWeather);
 
 function searchWeather() {
-    console.log(searchCity.value);
+    console.log('Search City: ' + searchCity.value);
 };
