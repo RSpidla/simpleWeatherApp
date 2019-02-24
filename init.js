@@ -1,6 +1,6 @@
 "use strict";
 
-var searchButton = document.querySelector('button');
-var searchCity = document.querySelector('#city');
+let searchButton = document.querySelector('button');
+let searchCity = document.querySelector('#city');
 
 
