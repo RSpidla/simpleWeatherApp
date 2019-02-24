@@ -1,0 +1,463 @@
+/*
+
+Description:    CSS for Tweeter App V1.0
+Date Created:   19/02/16
+Date Updated:   19/02/21
+
+00. Mixins
+01. Variables
+    ├── Brand Primary Colour
+    ├── Brand Secondary Colours
+    ├── Brand UI Colours
+    └── Brand Fonts
+02. Reset
+		└── HTML5 Boilerplate v4.3.0
+03. Layout
+    └── Media Queries
+04. Typography
+    ├── Legal
+    └── Media Queries
+05. Header
+		├── Bird
+		├── Logo
+		├── Menu
+			└── Button
+    └── Media Queries
+06. Footer
+    ├── Copyright
+    └── Media Queries
+07. New Tweet
+		├── Form
+			├── Text Area Feedback
+			└── Error Messages
+		└── Counter
+08. Tweet
+		├── Top Left - Tweet Avatar, Heading
+		├── Top Right - Tweet Name, Handle
+		├── Middle - Tweet Status
+		├── Bottom Left - Tweet Details
+		├── Bottom Right - Twitter Links
+		├── Icons
+			└── Load Characters
+		└── Media Queries
+	09. Button
+	10. User Messages
+		├── Icons
+		└── Colours
+	11. Helper Classes
+
+*/
+/* ==========================================================================
+00. Mixins
+========================================================================== */
+/* ==========================================================================
+01. Variables \ Brand Primary Colour
+========================================================================== */
+/* ==========================================================================
+01. Variables \ Brand Secondary Colour (1)
+========================================================================== */
+/* ==========================================================================
+01. Variables \ Brand Secondary Colour (2)
+========================================================================== */
+/* ==========================================================================
+01. Variables \ Brand Secondary Colour 3
+========================================================================== */
+/* ==========================================================================
+01. Variables \ Brand Secondary Colour 4
+========================================================================== */
+/* ==========================================================================
+01. Variables \ Brand UI Colours
+========================================================================== */
+/* ==========================================================================
+01. Variables \ Brand Fonts
+========================================================================== */
+/* ============================================================================= 
+02. HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/
+================================================================================ */
+html,
+button,
+input,
+select,
+textarea {
+  color: #263238;
+}
+html {
+  font-size: 100%;
+  line-height: 1.4em;
+}
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid white;
+  margin: 40px 0 20px;
+  padding: 0;
+}
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+body.primary {
+  margin: 0 !important;
+}
+/* ============================================================================= 
+03. Layout
+================================================================================ */
+.primary__header {
+  grid-area: header;
+}
+.primary__footer {
+  grid-area: footer;
+}
+.primary__main {
+  grid-area: main;
+}
+.primary {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: 60px 
+  1fr
+  60px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url("../images/duotone.png") no-repeat center center fixed;
+}
+/* ============================================================================= 
+03. Layout \ Media Queries
+================================================================================ */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  .primary__main {
+    margin: 40px;
+  }
+}
+@media only screen and (max-width: 799px) {
+  .primary__main {
+    margin: 40px 20px;
+  }
+}
+@media only screen and (max-width: 379px) {
+  .primary__main {
+    margin: 20px 20px 40px;
+  }
+}
+/* ============================================================================= 
+04. Typography
+================================================================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.0125em;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+h1 {
+  display: block;
+  margin: 20px 0;
+  font-size: 36px;
+  line-height: 1.136em;
+}
+h2 {
+  margin: 40px 0 20px;
+  font-size: 32px;
+  line-height: 1.136em;
+}
+h3 {
+  margin: 40px 0 20px;
+  font-size: 24px;
+  line-height: 1.136em;
+}
+p {
+  margin: 0 0 20px;
+  font-size: 24px;
+  line-height: 1.5em;
+}
+strong {
+  font-weight: 400;
+}
+em {
+  font-style: normal;
+  font-weight: 400;
+}
+ul {
+  list-style-type: none;
+}
+a:link,
+a:visited {
+  color: #263238;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #A3ACB0;
+  text-decoration: none;
+}
+/* ============================================================================= 
+04. Typography \ Media Queries
+================================================================================ */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p,
+  ul,
+  ol {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 380px) and (max-width: 799px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p,
+  ul,
+  ol {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 379px) {
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p,
+  ul,
+  ol {
+    font-size: 16px;
+  }
+}
+/* ============================================================================= 
+05. Header
+================================================================================ */
+.primary__header {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  width: calc(100% - 20px);
+  padding: 0 10px;
+  background-color: white;
+  -webkit-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+.primary__header .header-form {
+  display: inline-block;
+  width: 50%;
+}
+.primary__header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: white;
+}
+.primary__header li {
+  float: left;
+}
+.primary__header li a {
+  display: block;
+  padding: 20px;
+  border-right: 1px solid #f4f4f4;
+  border-bottom: none;
+  color: #263238;
+  font: 500 14px/20px "Oswald", Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.primary__header li a:hover,
+.primary__header .menu-btn:hover,
+.primary__header li a:focus,
+.primary__header .menu-btn:hover {
+  color: #FB6428;
+}
+/* ============================================================================= 
+05. Header \ Bird
+================================================================================ */
+.primary__header .bird {
+  float: left;
+  display: block;
+  margin: 5px 0 0 5px;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border-bottom: none;
+  cursor: pointer;
+}
+.primary__header .bird:hover {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+/* ============================================================================= 
+05. Header \ Logo
+================================================================================ */
+.primary__header .logo {
+  display: block;
+  float: left;
+  padding: 20px 0;
+  border-bottom: none;
+  font: 500 14px/20px "Oswald", Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.primary__header .logo:link,
+.primary__header .logo:visited {
+  color: #263238;
+  text-decoration: none;
+}
+.primary__header .logo:hover,
+.primary__header .logo:focus {
+  color: #FB6428;
+}
+/* ============================================================================= 
+05. Header \ Menu
+================================================================================ */
+.primary__header .menu {
+  position: relative;
+  right: -10px;
+  float: right;
+  clear: none;
+  max-height: none;
+}
+/* ============================================================================= 
+05. Header \ Menu \ Button
+================================================================================ */
+.primary__header .menu-btn {
+  display: none;
+}
+.primary__header .menu-btn:checked ~ .menu {
+  max-height: 260px;
+}
+.primary__header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.primary__header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.primary__header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.primary__header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.primary__header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+/* ============================================================================= 
+05. Header \ Media Queries
+================================================================================ */
+@media only screen and (max-width: 419px) {
+  .primary__header li a {
+    padding: 20px 10px;
+  }
+}
+/* ============================================================================= 
+06. Footer
+================================================================================ */
+.primary__footer {
+  background-color: white;
+  -webkit-box-shadow: 1px -2px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 1px -2px 4px 0 rgba(0, 0, 0, 0.15);
+  color: #263238;
+}
+.copyright {
+  display: inline-block;
+  margin: 0;
+  padding: 20px;
+  font: 500 14px/20px "Oswald", Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.copyright a:link {
+  color: #263238;
+  text-decoration: none;
+  border-bottom: none;
+}
+.copyright a:visited {
+  color: #263238;
+  text-decoration: none;
+}
+.copyright a:hover,
+.copyright a:focus {
+  color: #FB6428;
+  text-decoration: none;
+}
+/* ============================================================================= 
+06. Footer \ Media Queries
+================================================================================ */
+@media only screen and (max-width: 599px) {
+  .copyright {
+    width: calc(100% - 20px);
+    padding: 20px 10px 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 379px) {
+  .copyright {
+    font-size: 12px;
+  }
+}
+#weather {
+  display: none;
+  margin: 0 auto 40px;
+  padding: 20px;
+  width: calc(100% - 40px);
+  min-height: fit-content;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+#weather:hover,
+#weather:focus {
+  max-width: 520px;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.9);
+}
+#load {
+  padding: 30px;
+  width: 500px;
+  margin: 100px auto auto;
+  display: none;
+}
